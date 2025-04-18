@@ -18,7 +18,7 @@ const server = http.createServer((req, res) => {
       email: "d@e.com",
     });
 
-    return res.end("Criação de usuários");
+    return res.writeHead(201).end();
   }
 
   if (method === "PUT" && url === "/users/1") {
@@ -29,7 +29,7 @@ const server = http.createServer((req, res) => {
     return res.end("Exclusão de usuários");
   }
 
-  res.end("Hello World!");
+  res.writeHead(404).end("Not Found");
 });
 
 server.listen(3333);
